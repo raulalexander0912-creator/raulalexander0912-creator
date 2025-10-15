@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compuestos - QuimiLab</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="burger" aria-label="Abrir menú" title="Menú">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tabla.html">Tabla</a>
+        <a href="familias.html">Familias</a>
+        <a href="compuestos.html">Compuestos</a>
+        <a href="mezclas.html">Mezclas</a>
+      </nav>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo empresa">
+        <strong>QuimiLab</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido de la dinámica -->
+  <section class="page-section">
+    <h2>Relaciona compuestos con sus elementos y fórmula</h2>
+    <p>Selecciona un compuesto a la izquierda y luego su correspondiente a la derecha para dibujar una línea.</p>
+
+    <div class="match-area card" id="matchArea">
+      <!-- Columnas -->
+      <div class="grid cols-2">
+        <div class="column left">
+          <h3>Compuestos del entorno escolar</h3>
+          <div id="leftCol"></div>
+        </div>
+        <div class="column right">
+          <h3>Elementos y fórmula</h3>
+          <div id="rightCol"></div>
+        </div>
+      </div>
+      <!-- SVG para líneas -->
+      <svg class="lines" id="lines"></svg>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <button id="btnCReview" class="btn">Revisar</button>
+      <button id="btnCReset" class="btn secondary">Reiniciar</button>
+    </div>
+    <div id="cMsg" style="margin-top:0.75rem;"></div>
+  </section>
+
+  <script src="menu.js"></script>
+  <script src="compuesto.js"></script>
+</body>
+</html>

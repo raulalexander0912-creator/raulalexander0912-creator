@@ -1,0 +1,282 @@
+/* --- Tipografía y reset básico --- */
+* { /* Restablece margen y padding */
+  margin: 0; /* quita márgenes */
+  padding: 0; /* quita padding */
+  box-sizing: border-box; /* incluye borde en el cálculo total */
+}
+
+html, body { /* Configuración del documento */
+  font-family: sans-serif; /* tipografía solicitada */
+  color: #222; /* color de texto por defecto */
+  background: #f7f7f7; /* fondo general claro */
+  height: 100%; /* alto total */
+}
+
+/* --- Header con menú y logo --- */
+.header { /* Contenedor del header */
+  position: sticky; /* permanece arriba al hacer scroll */
+  top: 0; /* pegado al top */
+  z-index: 1000; /* encima del contenido */
+  background: #eaeaea; /* gris claro para el fondo del menú */
+  border-bottom: 1px solid #ddd; /* línea inferior */
+}
+
+.header-inner { /* Layout del header */
+  display: flex; /* usa flexbox */
+  align-items: center; /* centra verticalmente */
+  justify-content: space-between; /* separa a los extremos */
+  padding: 0.75rem 1rem; /* espacio interno */
+}
+
+/* --- Menú hamburguesa --- */
+.burger { /* botón de hamburguesa */
+  display: inline-flex; /* muestra botón como inline-flex */
+  flex-direction: column; /* barras verticales */
+  gap: 4px; /* separación entre barras */
+  cursor: pointer; /* cursor de mano */
+  user-select: none; /* no seleccionable */
+}
+
+.burger .bar { /* cada barra del ícono */
+  width: 24px; /* ancho de barra */
+  height: 2px; /* alto de barra */
+  background: #333; /* color de barra */
+}
+
+/* --- Logo --- */
+.logo { /* contenedor del logo */
+  display: inline-flex; /* disposición inline-flex */
+  align-items: center; /* centrado vertical */
+  gap: 8px; /* separación */
+}
+
+.logo img { /* imagen del logo */
+  width: 40px; /* tamaño del logo */
+  height: 40px; /* tamaño del logo */
+  object-fit: contain; /* ajusta sin deformar */
+}
+
+/* --- Panel del menú --- */
+.nav { /* panel del menú desplegable */
+  position: absolute; /* posiciona relativo al header */
+  left: 0.75rem; /* cerca de la hamburguesa */
+  top: 64px; /* debajo del header */
+  background: #eaeaea; /* gris claro */
+  border: 1px solid #ddd; /* borde sutil */
+  border-radius: 8px; /* esquinas redondeadas */
+  padding: 0.75rem; /* espacio interno */
+  display: none; /* oculto por defecto */
+  min-width: 180px; /* ancho mínimo */
+}
+
+.nav.open { /* cuando se abre */
+  display: block; /* mostrar */
+}
+
+.nav a { /* enlaces del menú */
+  display: block; /* cada enlace ocupa una línea */
+  text-decoration: none; /* sin subrayado */
+  color: #333; /* color texto */
+  padding: 0.5rem 0.75rem; /* espacio interno */
+  border-radius: 6px; /* esquinas redondeadas */
+}
+
+.nav a:hover { /* hover del enlace */
+  background: #dcdcdc; /* gris más oscuro */
+}
+
+
+/* --- Contenedores comunes --- */
+.page-section { /* secciones generales */
+  padding: 1rem; /* espacio */
+}
+
+.hero {
+  background: linear-gradient(to bottom right, #e0d9ff, #c2c2ff);
+  min-height: 90vh;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.hero-content {
+  margin-top: 0;
+}
+
+.title {
+  font-size: 3rem;
+  color: #0c0000;
+  margin-bottom: 0rem;
+}
+
+.bienvenida {
+  font-size: 1.2rem;                                                                      
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+  color: #111;
+}
+
+.video-container {
+  width: 80%;
+  max-width: 720px;
+  margin-bottom: 2rem;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Botones generales --- */
+.btn { /* estilo base de botón */
+  background: #0d6efd; /* azul primario */
+  color: white; /* texto blanco */
+  border: none; /* sin borde */
+  padding: 0.5rem 0.9rem; /* espacio */
+  border-radius: 8px; /* esquinas redondeadas */
+  cursor: pointer; /* cursor mano */
+  font-weight: 600; /* seminegrita */
+}
+
+.btn.secondary { /* botón secundario */
+  background: #6c757d; /* gris */
+}
+
+/* --- Tarjetas y bloques --- */
+.card { /* tarjeta informativa */
+  background: white; /* fondo blanco */
+  border: 1px solid #ddd; /* borde sutil */
+  border-radius: 10px; /* esquinas */
+  padding: 1rem; /* espacio interno */
+}
+
+.grid { /* rejilla flexible */
+  display: grid; /* grid */
+  gap: 1rem; /* separación entre celdas */
+}
+
+.grid.cols-2 { /* dos columnas */
+  grid-template-columns: 1fr 1fr; /* dos col iguales */
+}
+
+.grid.cols-4 { /* cuatro columnas */
+  grid-template-columns: repeat(4, 1fr); /* cuatro col */
+}
+
+/* --- Colores de familias (Tabla y Familias) --- */
+.family-metal { background: #ffd166; /* amarillo metálico */}
+.family-nonmetal { background: #95d5b2; /* verde suave */}
+.family-metalloid { background: #f8c4e1; /* rosa suave */}
+.family-noble { background: #a8dadc; /* celeste */}
+.family-rare { background: #cdb4db; /* lila */}
+
+/* Contraste de texto adaptado */
+.family-metal, .family-metalloid { color: #222; /* texto oscuro */}
+.family-nonmetal, .family-noble, .family-rare { color: #0b132b; /* azul profundo */}
+
+/* --- Drag & drop elementos (Familias) --- */
+.pool { /* bloque de elementos */
+  min-height: 160px; /* alto mínimo */
+  padding: 0.75rem; /* espacio interno */
+  border: 2px dashed #bbb; /* borde punteado */
+  border-radius: 10px; /* esquinas */
+  background: white; /* fondo blanco */
+}
+
+.drop { /* zona de familia */
+  min-height: 140px; /* alto mínimo */
+  padding: 0.75rem; /* espacio interno */
+  border: 2px dashed transparent; /* base sin borde visible */
+  border-radius: 10px; /* esquinas */
+}
+
+.drop.family-metal { border-color: #ffd166; /* borde familia */}
+.drop.family-nonmetal { border-color: #95d5b2; }
+.drop.family-metalloid { border-color: #f8c4e1; }
+.drop.family-noble { border-color: #a8dadc; }
+.drop.family-rare { border-color: #cdb4db; }
+
+.item { /* ficha arrastrable */
+  display: inline-block; /* inline-block */
+  margin: 6px; /* separación */
+  padding: 6px 10px; /* espacio */
+  background: #fff; /* fondo blanco */
+  border: 1px solid #ccc; /* borde sutil */
+  border-radius: 6px; /* esquinas */
+  cursor: grab; /* cursor arrastre */
+  user-select: none; /* no seleccionable */
+}
+
+/* --- Compuestos: líneas de conexión --- */
+.match-area { /* contenedor general de matching */
+  position: relative; /* para líneas absolutas */
+  min-height: 360px; /* alto mínimo */
+}
+
+.column { /* columnas izquierda y derecha */
+  background: #ffffff; /* blanco */
+  border: 1px solid #ddd; /* borde */
+  border-radius: 10px; /* esquinas */
+  padding: 0.75rem; /* espacio */
+}
+
+.column.left { background: #e3f2fd; /* celeste claro izquierda */}
+.column.right { background: #fff0f6; /* rosa muy claro derecha */}
+
+.choice { /* ítems clicables */
+  padding: 8px 10px; /* espacio */
+  margin: 6px 0; /* separación vertical */
+  border: 1px solid #bbb; /* borde sutil */
+  border-radius: 6px; /* esquinas */
+  background: white; /* fondo blanco */
+  cursor: pointer; /* cursor */
+}
+
+.choice.active { /* ítem seleccionado */
+  outline: 2px solid #0d6efd; /* resalte */
+}
+
+/* SVG superpuesto para líneas */
+svg.lines { /* lienzo de líneas */
+  position: absolute; /* superpuesto */
+  inset: 0; /* ocupa todo */
+  pointer-events: none; /* no intercepta clics */
+}
+
+/* --- Mezclas: tablero de 4 bloques --- */
+.board { /* tablero general */
+  display: grid; /* grid */
+  grid-template-columns: repeat(4, 1fr); /* cuatro columnas */
+  gap: 1rem; /* separación */
+}
+
+.board .block { /* cada bloque */
+  background: #fff; /* fondo blanco base */
+  border: 1px solid #ddd; /* borde sutil */
+  border-radius: 10px; /* esquinas */
+  min-height: 220px; /* alto mínimo */
+  padding: 0.75rem; /* espacio interno */
+}
+
+.block.mix { background: #ffe8a1; /* mezcla: amarillo suave */}
+.block.components { background: #c7f9cc; /* componentes: verde */}
+.block.method { background: #fde2e4; /* método: rosa */}
+.block.type { background: #cde7ff; /* tipo: celeste */}
+
+.tag { /* tarjeta arrastrable para Mezclas */
+  background: white; /* fondo blanco */
+  border: 1px solid #bbb; /* borde sutil */
+  border-radius: 6px; /* esquinas */
+  padding: 6px 10px; /* espacio */
+  margin: 6px; /* separación */
+  display: inline-block; /* inline-block */
+  cursor: grab; /* arrastre */
+}

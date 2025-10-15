@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!-- declara tipo de documento -->
+<html lang="es"> <!-- idioma español -->
+<head> <!-- cabecera -->
+  <meta charset="UTF-8"> <!-- codificación -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive -->
+  <title>Inicio - QuimiLab</title> <!-- título de la pestaña -->
+  <link rel="stylesheet" href="index.css"> <!-- vincula estilos -->
+</head>
+<body> <!-- cuerpo -->
+
+  
+  <header class="header">
+    <div class="header-inner">
+      <div class="burger" aria-label="Abrir menú" title="Menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tabla.html">Tabla</a>
+        <a href="familias.html">Familias</a>
+        <a href="compuestos.html">Compuestos</a>
+        <a href="mezclas.html">Mezclas</a>
+      </nav>
+      <div class="logo">
+        <img src="mg/log1.png" alt="Logo empresa">
+        <strong>QuimiLab</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección de bienvenida y video -->
+<section class="hero">
+  <h1 class="title">Bienvenido a QuimiLab</h1>
+  <p class="bienvenida">
+    Bienvenido a Química en mi entorno, una aplicación diseñada para que descubras la presencia de la química en tu vida cotidiana.
+    A través de actividades, ejemplos y retos, aprenderás a distinguir mezclas y compuestos presentes en tu entorno, comprendiendo cómo esta ciencia influye en todo lo que te rodea.
+    🌱 ¡Explora, analiza y descubre la química del mundo real!
+  </p>
+  <div class="video-container">
+    <video class="video" controls>
+      <source src="assets/intro.mp4" type="video/mp4">
+      Tu navegador no soporta el video HTML5.
+    </video>
+  </div>
+</section>
+
+  <script src="menu.js"></script> <!-- JS compartido -->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mezclas - QuimiLab</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Header reutilizable -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="burger" aria-label="Abrir menú" title="Menú">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tabla.html">Tabla</a>
+        <a href="familias.html">Familias</a>
+        <a href="compuestos.html">Compuestos</a>
+        <a href="mezclas.html">Mezclas</a>
+      </nav>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo empresa">
+        <strong>QuimiLab</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido de la dinámica -->
+  <section class="page-section">
+    <h2>Organiza las tarjetas según mezcla, componentes, método y tipo</h2>
+    <p>Arrastra cada tarjeta al bloque correcto. Revisa para validar; Reiniciar lo baraja de nuevo.</p>
+
+    <div class="board card">
+      <!-- Bloques -->
+      <div class="block mix" data-block="mix">
+        <h3>Mezclas</h3>
+        <div class="dropzone" id="mixZone"></div>
+      </div>
+      <div class="block components" data-block="components">
+        <h3>Componentes</h3>
+        <div class="dropzone" id="compZone"></div>
+      </div>
+      <div class="block method" data-block="method">
+        <h3>Método de separación</h3>
+        <div class="dropzone" id="methodZone"></div>
+      </div>
+      <div class="block type" data-block="type">
+        <h3>Tipo de mezcla</h3>
+        <div class="dropzone" id="typeZone"></div>
+      </div>
+    </div>
+
+    <!-- Pool de tarjetas -->
+    <div class="card" style="margin-top:1rem;">
+      <h3>Tarjetas</h3>
+      <div id="tagsPool"></div>
+    </div>
+
+    <!-- Controles -->
+    <div style="margin-top:1rem;">
+      <button id="btnMReview" class="btn">Revisar</button>
+      <button id="btnMReset" class="btn secondary">Reiniciar</button>
+    </div>
+    <div id="mMsg" style="margin-top:0.75rem;"></div>
+  </section>
+
+  <script src="menu.js"></script>
+  <script src="mezcla.js"></script>
+</body>
+</html>

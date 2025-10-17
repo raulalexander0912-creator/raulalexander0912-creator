@@ -21,7 +21,7 @@
         <a href="mezclas.html">Mezclas</a>
       </nav>
       <div class="logo">
-        <img src="assets/logo.png" alt="Logo empresa">
+        <img src="mg/log1.png" alt="Logo empresa">
         <strong>QuimiLab</strong>
       </div>
     </div>
@@ -29,9 +29,12 @@
 
   <!-- Contenido de la dinámica -->
   <section class="page-section">
+    
     <h2>Relaciona compuestos con sus elementos y fórmula</h2>
     <p>Selecciona un compuesto a la izquierda y luego su correspondiente a la derecha para dibujar una línea.</p>
-
+    <div class="time" id="timerDisplay"> 
+      <p id="timerDisplay">Tiempo restante: 2:00</p>
+     </div>
     <div class="match-area card" id="matchArea">
       <!-- Columnas -->
       <div class="grid cols-2">
@@ -54,6 +57,14 @@
     </div>
     <div id="cMsg" style="margin-top:0.75rem;"></div>
   </section>
+
+  <div id="gameOverModal" class="gameover">
+  <div style="background:white; padding:2rem; border-radius:10px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+    <h2>GAME OVER</h2>
+    <p>Se acabó el tiempo.</p>
+    <button id="btnContinue" class="btn">Continuar</button>
+  </div>
+</div>
 
   <script src="menu.js"></script>
   <script src="compuesto.js"></script>

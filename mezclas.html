@@ -22,38 +22,42 @@
         <a href="mezclas.html">Mezclas</a>
       </nav>
       <div class="logo">
-        <img src="assets/logo.png" alt="Logo empresa">
+        <img src="mg/log1.png" alt="Logo empresa">
         <strong>QuimiLab</strong>
       </div>
     </div>
   </header>
 
-  <!-- Contenido de la dinámica -->
-  <section class="page-section">
-    <h2>Organiza las tarjetas según mezcla, componentes, método y tipo</h2>
-    <p>Arrastra cada tarjeta al bloque correcto. Revisa para validar; Reiniciar lo baraja de nuevo.</p>
+<section class="page-section">
+    <h2>Organiza las tarjetas según mezcla</h2>
+    <p>Arrastra una mezcla al bloque amarillo. Los demás se llenarán automáticamente.</p>
 
     <div class="board card">
-      <!-- Bloques -->
+      <!-- Mezcla -->
       <div class="block mix" data-block="mix">
-        <h3>Mezclas</h3>
+        <h3>Mezcla</h3>
         <div class="dropzone" id="mixZone"></div>
       </div>
-      <div class="block components" data-block="components">
-        <h3>Componentes</h3>
-        <div class="dropzone" id="compZone"></div>
+
+      <!-- Fórmula -->
+      <div class="block formula" data-block="formula">
+        <h3>Fórmula</h3>
+        <div class="dropzone" id="formulaZone"></div>
       </div>
+
+      <!-- Método -->
       <div class="block method" data-block="method">
         <h3>Método de separación</h3>
         <div class="dropzone" id="methodZone"></div>
       </div>
+        <!-- Tipo -->
       <div class="block type" data-block="type">
         <h3>Tipo de mezcla</h3>
         <div class="dropzone" id="typeZone"></div>
       </div>
     </div>
 
-    <!-- Pool de tarjetas -->
+    <!-- Tarjetas -->
     <div class="card" style="margin-top:1rem;">
       <h3>Tarjetas</h3>
       <div id="tagsPool"></div>
@@ -61,7 +65,6 @@
 
     <!-- Controles -->
     <div style="margin-top:1rem;">
-      <button id="btnMReview" class="btn">Revisar</button>
       <button id="btnMReset" class="btn secondary">Reiniciar</button>
     </div>
     <div id="mMsg" style="margin-top:0.75rem;"></div>

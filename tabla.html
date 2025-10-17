@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla periódica - QuimiLab</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Header reutilizable -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="burger" aria-label="Abrir menú" title="Menú">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tabla.html">Tabla</a>
+        <a href="familias.html">Familias</a>
+        <a href="compuestos.html">Compuestos</a>
+        <a href="mezclas.html">Mezclas</a>
+      </nav>
+      <div class="logo">
+        <img src="mg/log1.png" alt="Logo empresa">
+        <strong>QuimiLab</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="page-section">
+    <h2>Familias de la tabla periódica</h2>
+    <p>Visualiza las familias principales y sus características. Los colores corresponden a cada familia.</p>
+
+    <!-- Imagen de tabla (placeholder) -->
+    <div class="card" style="margin: 1rem 0;">
+      <img src="mg/Tabla.jpeg" alt="Tabla periódica" style="width:100%; border-radius:8px;">
+      <!-- Nota: sustituye 'assets/tabla.png' por tu imagen de la tabla periódica -->
+    </div>
+
+    <!-- Bloques de descripción por familia -->
+    <div class="grid cols-2">
+      <!-- Metales -->
+      <div class="card family-metal">
+        <h3>Metales</h3>
+        <p><strong>Características:</strong> Buenos conductores de calor y electricidad; maleables, dúctiles y brillantes; tienden a perder electrones y formar cationes.</p>
+        <p><strong>Elementos:</strong> Alcalinos (Li, Na, K, Rb, Cs, Fr); Alcalinotérreos (Be, Mg, Ca, Sr, Ba, Ra); Transición (Grupos 3–12: Sc-Zn, Y-Cd, Hf-Hg, etc.).</p>
+      </div>
+
+      <!-- No metales -->
+      <div class="card family-nonmetal">
+        <h3>No metales</h3>
+        <p><strong>Características:</strong> Malos conductores; frágiles en estado sólido; tienden a ganar electrones y formar aniones.</p>
+        <p><strong>Elementos:</strong> H, C, N, O, F, P, S, Cl, Se, Br, I.</p>
+      </div>
+
+      <!-- Metaloides -->
+      <div class="card family-metalloid">
+        <h3>Metaloides</h3>
+        <p><strong>Características:</strong> Propiedades intermedias entre metales y no metales; semiconductores útiles en electrónica.</p>
+        <p><strong>Elementos:</strong> B, Si, Ge, As, Sb, Te, Po.</p>
+      </div>
+
+      <!-- Gases nobles -->
+      <div class="card family-noble">
+        <h3>Gases nobles</h3>
+        <p><strong>Características:</strong> Muy estables y poco reactivos; gases monoatómicos a temperatura ambiente.</p>
+        <p><strong>Elementos:</strong> He, Ne, Ar, Kr, Xe, Rn.</p>
+      </div>
+
+      <!-- Tierras raras -->
+      <div class="card family-rare">
+        <h3>Tierras raras</h3>
+        <p><strong>Características:</strong> Incluyen lantánidos y actínidos; usados en imanes, láseres, baterías y tecnología avanzada.</p>
+        <p><strong>Elementos:</strong> Lantánidos: La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu. Actínidos: Ac, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="menu.js"></script>
+</body>
+</html>

@@ -1,98 +1,103 @@
 /* --- Tipografía y reset básico --- */
-* { /* Restablece margen y padding */
-  margin: 0; /* quita márgenes */
-  padding: 0; /* quita padding */
-  box-sizing: border-box; /* incluye borde en el cálculo total */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-html, body { /* Configuración del documento */
-  font-family: sans-serif; /* tipografía solicitada */
-  color: #222; /* color de texto por defecto */
-  background: #f7f7f7; /* fondo general claro */
-  height: 100%; /* alto total */
+.subtitle{
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+html, body {
+  font-family: sans-serif;
+  color: #222;
+  background: #f7f7f7;
+  height: 100%;
 }
 
 /* --- Header con menú y logo --- */
-.header { /* Contenedor del header */
-  position: sticky; /* permanece arriba al hacer scroll */
-  top: 0; /* pegado al top */
-  z-index: 1000; /* encima del contenido */
-  background: #eaeaea; /* gris claro para el fondo del menú */
-  border-bottom: 1px solid #ddd; /* línea inferior */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #eaeaea;
+  border-bottom: 1px solid #ddd;
 }
 
-.header-inner { /* Layout del header */
-  display: flex; /* usa flexbox */
-  align-items: center; /* centra verticalmente */
-  justify-content: space-between; /* separa a los extremos */
-  padding: 0.75rem 1rem; /* espacio interno */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
 }
 
-/* --- Menú hamburguesa --- */
-.burger { /* botón de hamburguesa */
-  display: inline-flex; /* muestra botón como inline-flex */
-  flex-direction: column; /* barras verticales */
-  gap: 4px; /* separación entre barras */
-  cursor: pointer; /* cursor de mano */
-  user-select: none; /* no seleccionable */
+.burger {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
 }
 
-.burger .bar { /* cada barra del ícono */
-  width: 24px; /* ancho de barra */
-  height: 2px; /* alto de barra */
-  background: #333; /* color de barra */
+.burger .bar {
+  width: 24px;
+  height: 2px;
+  background: #333;
 }
 
-/* --- Logo --- */
-.logo { /* contenedor del logo */
-  display: inline-flex; /* disposición inline-flex */
-  align-items: center; /* centrado vertical */
-  gap: 8px; /* separación */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.logo img { /* imagen del logo */
-  width: 40px; /* tamaño del logo */
-  height: 40px; /* tamaño del logo */
-  object-fit: contain; /* ajusta sin deformar */
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
-/* --- Panel del menú --- */
-.nav { /* panel del menú desplegable */
-  position: absolute; /* posiciona relativo al header */
-  left: 0.75rem; /* cerca de la hamburguesa */
-  top: 64px; /* debajo del header */
-  background: #eaeaea; /* gris claro */
-  border: 1px solid #ddd; /* borde sutil */
-  border-radius: 8px; /* esquinas redondeadas */
-  padding: 0.75rem; /* espacio interno */
-  display: none; /* oculto por defecto */
-  min-width: 180px; /* ancho mínimo */
+.nav {
+  position: absolute;
+  left: 0.75rem;
+  top: 64px;
+  background: #eaeaea;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: none;
+  min-width: 180px;
 }
 
-.nav.open { /* cuando se abre */
-  display: block; /* mostrar */
+.nav.open {
+  display: block;
 }
 
-.nav a { /* enlaces del menú */
-  display: block; /* cada enlace ocupa una línea */
-  text-decoration: none; /* sin subrayado */
-  color: #333; /* color texto */
-  padding: 0.5rem 0.75rem; /* espacio interno */
-  border-radius: 6px; /* esquinas redondeadas */
+.nav a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
 }
 
-.nav a:hover { /* hover del enlace */
-  background: #dcdcdc; /* gris más oscuro */
+.nav a:hover {
+  background: #dcdcdc;
 }
-
 
 /* --- Contenedores comunes --- */
-.page-section { /* secciones generales */
-  padding: 1rem; /* espacio */
+.page-section {
+  background-color: rgba(6, 240, 201, 0.5);
+  padding: 1rem;
 }
 
 .hero {
-  background: linear-gradient(to bottom right, #e0d9ff, #c2c2ff);
+  background-image: url(mg/port.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
   min-height: 90vh;
   padding: 3rem 1rem;
   display: flex;
@@ -102,26 +107,35 @@ html, body { /* Configuración del documento */
   text-align: center;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .hero-content {
   margin-top: 0;
 }
 
 .title {
   font-size: 3rem;
-  color: #0c0000;
-  margin-bottom: 0rem;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
 }
 
 .bienvenida {
-  font-size: 1.2rem;                                                                      
+  font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto 1rem auto;
-  color: #111;
+  color: #f3f1f1;
 }
 
 .video-container {
-  width: 80%;
-  max-width: 720px;
   margin-bottom: 2rem;
   border: 2px solid #aaa;
   border-radius: 10px;
@@ -130,153 +144,204 @@ html, body { /* Configuración del documento */
 }
 
 .video {
-  width: 100%;
-  height: auto;
+  width: 600px;
+  height: 300px;
   display: block;
 }
 
 /* --- Botones generales --- */
-.btn { /* estilo base de botón */
-  background: #0d6efd; /* azul primario */
-  color: white; /* texto blanco */
-  border: none; /* sin borde */
-  padding: 0.5rem 0.9rem; /* espacio */
-  border-radius: 8px; /* esquinas redondeadas */
-  cursor: pointer; /* cursor mano */
-  font-weight: 600; /* seminegrita */
+.btn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
-.btn.secondary { /* botón secundario */
-  background: #6c757d; /* gris */
+.btn.secondary {
+  background: #6c757d;
 }
 
 /* --- Tarjetas y bloques --- */
-.card { /* tarjeta informativa */
-  background: white; /* fondo blanco */
-  border: 1px solid #ddd; /* borde sutil */
-  border-radius: 10px; /* esquinas */
-  padding: 1rem; /* espacio interno */
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
 }
 
-.grid { /* rejilla flexible */
-  display: grid; /* grid */
-  gap: 1rem; /* separación entre celdas */
+.grid {
+  display: grid;
+  gap: 1rem;
 }
 
-.grid.cols-2 { /* dos columnas */
-  grid-template-columns: 1fr 1fr; /* dos col iguales */
+.grid.cols-2 {
+  grid-template-columns: 1fr 1fr;
 }
 
-.grid.cols-4 { /* cuatro columnas */
-  grid-template-columns: repeat(4, 1fr); /* cuatro col */
+.grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /* --- Colores de familias (Tabla y Familias) --- */
-.family-metal { background: #ffd166; /* amarillo metálico */}
-.family-nonmetal { background: #95d5b2; /* verde suave */}
-.family-metalloid { background: #f8c4e1; /* rosa suave */}
-.family-noble { background: #a8dadc; /* celeste */}
-.family-rare { background: #cdb4db; /* lila */}
+.family-metal { background: #ffd166; }
+.family-nonmetal { background: #95d5b2; }
+.family-metalloid { background: #f8c4e1; }
+.family-noble { background: #a8dadc; }
+.family-rare { background: #cdb4db; }
 
-/* Contraste de texto adaptado */
-.family-metal, .family-metalloid { color: #222; /* texto oscuro */}
-.family-nonmetal, .family-noble, .family-rare { color: #0b132b; /* azul profundo */}
+.family-metal, .family-metalloid { color: #222; }
+.family-nonmetal, .family-noble, .family-rare { color: #0b132b; }
 
 /* --- Drag & drop elementos (Familias) --- */
-.pool { /* bloque de elementos */
-  min-height: 160px; /* alto mínimo */
-  padding: 0.75rem; /* espacio interno */
-  border: 2px dashed #bbb; /* borde punteado */
-  border-radius: 10px; /* esquinas */
-  background: white; /* fondo blanco */
+.pool {
+  min-height: 160px;
+  padding: 0.75rem;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  background: white;
 }
 
-.drop { /* zona de familia */
-  min-height: 140px; /* alto mínimo */
-  padding: 0.75rem; /* espacio interno */
-  border: 2px dashed transparent; /* base sin borde visible */
-  border-radius: 10px; /* esquinas */
+.drop {
+  min-height: 140px;
+  padding: 0.75rem;
+  border: 2px dashed transparent;
+  border-radius: 10px;
 }
 
-.drop.family-metal { border-color: #ffd166; /* borde familia */}
+.drop.family-metal { border-color: #ffd166; }
 .drop.family-nonmetal { border-color: #95d5b2; }
 .drop.family-metalloid { border-color: #f8c4e1; }
 .drop.family-noble { border-color: #a8dadc; }
 .drop.family-rare { border-color: #cdb4db; }
 
-.item { /* ficha arrastrable */
-  display: inline-block; /* inline-block */
-  margin: 6px; /* separación */
-  padding: 6px 10px; /* espacio */
-  background: #fff; /* fondo blanco */
-  border: 1px solid #ccc; /* borde sutil */
-  border-radius: 6px; /* esquinas */
-  cursor: grab; /* cursor arrastre */
-  user-select: none; /* no seleccionable */
+.item {
+  display: inline-block;
+  margin: 6px;
+  padding: 6px 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: grab;
+  user-select: none;
 }
 
 /* --- Compuestos: líneas de conexión --- */
-.match-area { /* contenedor general de matching */
-  position: relative; /* para líneas absolutas */
-  min-height: 360px; /* alto mínimo */
+.match-area {
+  position: relative;
+  min-height: 400px;
 }
 
-.column { /* columnas izquierda y derecha */
-  background: #ffffff; /* blanco */
-  border: 1px solid #ddd; /* borde */
-  border-radius: 10px; /* esquinas */
-  padding: 0.75rem; /* espacio */
+.column {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0.75rem;
 }
 
-.column.left { background: #e3f2fd; /* celeste claro izquierda */}
-.column.right { background: #fff0f6; /* rosa muy claro derecha */}
+.column.left { background: #e3f2fd; }
+.column.right { background: #fff0f6; }
 
-.choice { /* ítems clicables */
-  padding: 8px 10px; /* espacio */
-  margin: 6px 0; /* separación vertical */
-  border: 1px solid #bbb; /* borde sutil */
-  border-radius: 6px; /* esquinas */
-  background: white; /* fondo blanco */
-  cursor: pointer; /* cursor */
+.choice {
+  padding: 8px 10px;
+  margin: 6px 0;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
 }
 
-.choice.active { /* ítem seleccionado */
-  outline: 2px solid #0d6efd; /* resalte */
+.choice.active {
+  outline: 2px solid #0d6efd;
 }
 
-/* SVG superpuesto para líneas */
-svg.lines { /* lienzo de líneas */
-  position: absolute; /* superpuesto */
-  inset: 0; /* ocupa todo */
-  pointer-events: none; /* no intercepta clics */
+svg.lines {
+ position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 /* --- Mezclas: tablero de 4 bloques --- */
-.board { /* tablero general */
-  display: grid; /* grid */
-  grid-template-columns: repeat(4, 1fr); /* cuatro columnas */
-  gap: 1rem; /* separación */
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
-.board .block { /* cada bloque */
-  background: #fff; /* fondo blanco base */
-  border: 1px solid #ddd; /* borde sutil */
-  border-radius: 10px; /* esquinas */
-  min-height: 220px; /* alto mínimo */
-  padding: 0.75rem; /* espacio interno */
+.board .block {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  min-height: 220px;
+  padding: 0.75rem;
 }
 
-.block.mix { background: #ffe8a1; /* mezcla: amarillo suave */}
-.block.components { background: #c7f9cc; /* componentes: verde */}
-.block.method { background: #fde2e4; /* método: rosa */}
-.block.type { background: #cde7ff; /* tipo: celeste */}
+.block.mix { background: #ffe8a1; }
+.block.formula { background: #c7f9cc; }
+.block.method { background: #fde2e4; }
+.block.type { background: #cde7ff; }
 
-.tag { /* tarjeta arrastrable para Mezclas */
-  background: white; /* fondo blanco */
-  border: 1px solid #bbb; /* borde sutil */
-  border-radius: 6px; /* esquinas */
-  padding: 6px 10px; /* espacio */
-  margin: 6px; /* separación */
-  display: inline-block; /* inline-block */
-  cursor: grab; /* arrastre */
+.dropzone {
+  min-height: 140px;
+  padding: 0.5rem;
+}
+
+#tagsPool {
+  min-height: 160px;
+  padding: 0.75rem;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  background: white;
+}
+
+.tag {
+  background: white;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 6px;
+  display: inline-block;
+  cursor: grab;
+  user-select: none;
+}
+
+/* --- Animación suave al insertar tarjetas --- */
+.dropzone .tag {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#gameOverModal {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gameove{
+ display:none; 
+ position:fixed; 
+ top:0; 
+ left:0;
+ width:100%;
+ height:100%;
+ background:rgba(0,0,0,0.6);
+ z-index:2000; 
+ justify-content:center; 
+ align-items:center;
+}
+
+.time{
+ font-size:1.2rem; font-weight:bold; margin-bottom:1rem; text-align:center;
 }

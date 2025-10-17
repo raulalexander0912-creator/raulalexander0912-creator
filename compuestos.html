@@ -32,7 +32,7 @@
     
     <h2>Relaciona compuestos con sus elementos y fórmula</h2>
     <p>Selecciona un compuesto a la izquierda y luego su correspondiente a la derecha para dibujar una línea.</p>
-    <div class="time" id="timerDisplay"> 
+    <div class="time" > 
       <p id="timerDisplay">Tiempo restante: 2:00</p>
      </div>
     <div class="match-area card" id="matchArea">
@@ -49,6 +49,7 @@
       </div>
       <!-- SVG para líneas -->
       <svg class="lines" id="lines"></svg>
+      <div id="reviewBox" class="review-box" style="display:none;"></div>
     </div>
 
     <div style="margin-top:1rem;">
@@ -58,10 +59,10 @@
     <div id="cMsg" style="margin-top:0.75rem;"></div>
   </section>
 
-  <div id="gameOverModal" class="gameover">
+<div id="gameOverModal" class="gameover">
   <div style="background:white; padding:2rem; border-radius:10px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
-    <h2>GAME OVER</h2>
-    <p>Se acabó el tiempo.</p>
+    <h2 id="modalTitle">GAME OVER</h2>
+    <p id="modalMessage">Se acabó el tiempo.</p>
     <button id="btnContinue" class="btn">Continuar</button>
   </div>
 </div>

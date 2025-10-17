@@ -345,3 +345,20 @@ svg.lines {
 .time{
  font-size:1.2rem; font-weight:bold; margin-bottom:1rem; text-align:center;
 }
+
+#timerDisplay {
+  color: black;
+  font-size: 1.5rem;
+  display: block;
+}
+
+.review-box {
+  margin-top: 1rem;
+  background: #ffe8a1;
+  border: 2px solid #f0c000;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

@@ -114,42 +114,66 @@ function redrawLines() {
 
 // --- Revisar ---
 document.getElementById('btnCReview').addEventListener('click', () => {
+  clearInterval(timer); // ⏹️ Detiene el temporizador
+
   let wrong = [];
-  let correct = 0;
+  let correct = [];
+
   COMPOUNDS.forEach(c => {
     const found = connections.find(k => k.from === c.id);
     if (!found) {
-      wrong.push(c.label + ' (sin conexión)');
+      wrong.push(`${c.label} (sin conexión)`);
     } else if (SOLUTIONS[c.id] !== found.to) {
-      wrong.push(c.label);
+      wrong.push(`${c.label}`);
     } else {
-      correct++;
+      correct.push(`${c.label}`);
     }
   });
 
-  const msg = document.getElementById('cMsg');
-  if (wrong.length === 0 && correct === COMPOUNDS.length) {
-    msg.textContent = '¡Muy bien! Todas las relaciones son correctas.';
+  const reviewBox = document.getElementById('reviewBox');
+  reviewBox.style.display = 'block';
+
+  if (wrong.length === 0 && correct.length === COMPOUNDS.length) {
+    reviewBox.innerHTML = `
+      <strong>¡Felicidades!</strong><br>
+      🎉 Todas las relaciones son correctas. ¡Excelente trabajo!<br><br>
+      <button id="btnContinue" class="btn" style="margin-top:0.5rem;">Continuar</button>
+    `;
   } else {
-    msg.textContent = `Incorrectas: ${wrong.join(' | ')}. Se limpian líneas y se revuelven las columnas.`;
+    reviewBox.innerHTML = `
+      <strong>Revisión completada</strong><br>
+      ✅ Correctas: ${correct.join(', ') || 'Ninguna'}<br>
+      ❌ Incorrectas: ${wrong.join(', ') || 'Ninguna'}<br><br>
+      Se limpiaron las líneas y se revuelven las columnas.<br><br>
+      <button id="btnContinue" class="btn" style="margin-top:0.5rem;">Continuar</button>
+    `;
     connections.splice(0, connections.length);
-    renderCols();
-    startTimer(); // reinicia el temporizador
   }
+
+  setTimeout(() => {
+    const continueBtn = document.getElementById('btnContinue');
+    continueBtn.onclick = () => {
+      reviewBox.style.display = 'none';
+      connections.splice(0, connections.length);
+      renderCols();
+      startTimer(); // 🔁 Reinicia el temporizador
+    };
+  }, 50);
 });
 
 // --- Reiniciar ---
 document.getElementById('btnCReset').addEventListener('click', () => {
   const msg = document.getElementById('cMsg');
+  const reviewBox = document.getElementById('reviewBox');
   msg.textContent = 'Reinicio: se limpiaron las conexiones y se revuelven las columnas.';
+  reviewBox.style.display = 'none';
   connections.splice(0, connections.length);
   renderCols();
-
-  // 🔁 Espera a que el DOM se estabilice antes de reiniciar el temporizador
   setTimeout(() => {
     startTimer();
   }, 50);
 });
+
 
 // --- Eventos de redibujo ---
 window.addEventListener('resize', redrawLines);
@@ -186,10 +210,23 @@ function updateTimerDisplay() {
 }
 
 function showGameOver() {
-  const modal = document.getElementById('gameOverModal');
-  if (modal) {
-    modal.style.display = 'flex';
-  }
+  const reviewBox = document.getElementById('reviewBox');
+  reviewBox.style.display = 'block';
+  reviewBox.innerHTML = `
+    <strong>GAME OVER</strong><br>
+    Se acabó el tiempo. Intenta nuevamente.<br><br>
+    <button id="btnContinue" class="btn" style="margin-top:0.5rem;">Continuar</button>
+  `;
+
+  setTimeout(() => {
+    const continueBtn = document.getElementById('btnContinue');
+    continueBtn.onclick = () => {
+      reviewBox.style.display = 'none';
+      connections.splice(0, connections.length);
+      renderCols();
+      startTimer(); // 🔁 Reinicia el temporizador
+    };
+  }, 50);
 }
 
 document.getElementById('btnContinue').addEventListener('click', () => {

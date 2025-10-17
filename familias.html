@@ -32,7 +32,9 @@
   <section class="page-section">
     <h2>Clasifica los elementos en su familia</h2>
     <p>Arrastra los elementos al bloque de la familia correspondiente. Luego pulsa Revisar. Reiniciar revuelve y restaura.</p>
-
+    <div class="time"> 
+      <p id="timerDisplay">Tiempo restante: 2:00</p>
+     </div>
     <!-- Bloque: familias (5 secciones) y elementos (pool) -->
     <div class="grid cols-2" style="margin-top:1rem;">
       <!-- Bloque de familias -->
@@ -72,7 +74,15 @@
 
     <!-- Mensajes -->
     <div id="msg" style="margin-top:0.75rem;"></div>
+    <div id="reviewBox" class="review-box" style="display:none;"></div>
   </section>
+
+  <div id="gameOverModal" class="gameover">
+  <div style="background:white; padding:2rem; border-radius:10px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+    <h2>GAME OVER</h2>
+    <p>Se acabó el tiempo.</p>
+    <button id="btnContinue" class="btn">Continuar</button>
+  </div>
 
   <script src="menu.js"></script>
   <script src="familia.js"></script>
